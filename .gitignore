@@ -20,3 +20,10 @@ rad.json
 *.flf
 #Test results file
 TestResults.xml
+
+build/
+.cache
+.DS_Store
+fc_base/
+!fc_base/**/
+ffmpeg_stu/fc_base

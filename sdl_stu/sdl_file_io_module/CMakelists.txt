@@ -1,0 +1,12 @@
+﻿add_library(file_io_module STATIC 
+    file_io_module.cc
+)
+
+include_directories(/opt/homebrew/include/)
+link_directories(/opt/homebrew/lib)
+
+find_package(SDL2 REQUIRED)
+
+target_link_libraries(file_io_module PUBLIC
+    SDL2::SDL2
+)

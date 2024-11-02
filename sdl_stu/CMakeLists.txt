@@ -1,0 +1,18 @@
+﻿cmake_minimum_required(VERSION 3.20)
+project(sdl_stu)
+
+set(CMAKE_CXX_STANDARD 20)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
+
+add_subdirectory(sdl_core_module)
+add_subdirectory(sdl_video_module)
+add_subdirectory(sdl_audio_module)
+add_subdirectory(sdl_event_module)
+add_subdirectory(sdl_input_module)
+add_subdirectory(sdl_thread_module)
+add_subdirectory(sdl_timer_module)
+add_subdirectory(sdl_file_io_module)
+add_subdirectory(sdl_image_module)
+add_subdirectory(sdl_ttf_module)
+add_subdirectory(test)
