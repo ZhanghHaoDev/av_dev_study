@@ -1,18 +1,20 @@
-﻿cmake_minimum_required(VERSION 3.20)
-project(sdl_stu)
+﻿add_library(sdl_stu STATIC
+    sdl_stu.cpp
+)
 
-set(CMAKE_CXX_STANDARD 20)
-set(CMAKE_CXX_STANDARD_REQUIRED ON)
-set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
+find_package(SDL2 REQUIRED)
+find_package(SDL2_mixer REQUIRED)
+find_package(SDL2_image REQUIRED)
+find_package(SDL2_ttf REQUIRED)
 
-add_subdirectory(sdl_core_module)
-add_subdirectory(sdl_video_module)
-add_subdirectory(sdl_audio_module)
-add_subdirectory(sdl_event_module)
-add_subdirectory(sdl_input_module)
-add_subdirectory(sdl_thread_module)
-add_subdirectory(sdl_timer_module)
-add_subdirectory(sdl_file_io_module)
-add_subdirectory(sdl_image_module)
-add_subdirectory(sdl_ttf_module)
-add_subdirectory(test)
+include_directories(/opt/homebrew/Cellar/sdl2_mixer/2.8.0/include)
+include_directories(/opt/homebrew/Cellar/sdl2_image/2.8.2_2/include)
+include_directories(/opt/homebrew/Cellar/sdl2_ttf/2.22.0/include)
+
+target_link_libraries(sdl_stu PUBLIC
+    SDL2::SDL2
+    SDL2_mixer::SDL2_mixer
+    SDL2_image::SDL2_image
+    SDL2_ttf::SDL2_ttf
+)
+
