@@ -6,9 +6,11 @@ extern "C"{
     #include "libavformat/avformat.h"
 }
 
-ffmpeg_stu::ffmpeg_stu(){
-    std::string file_path = "/Users/zhanghao/code/cpp/av_dev_study/ffmpeg_stu/test/test_file/1227469313-1-16.mp4";
+ffmpeg_stu::ffmpeg_stu() = default;
 
+ffmpeg_stu::~ffmpeg_stu() = default;
+
+void ffmpeg_stu::my_av_dump_format(std::string file_path){
     int err = 0;
     av_log_set_level(AV_LOG_INFO);
     if (file_path.empty()){
@@ -31,5 +33,3 @@ ffmpeg_stu::ffmpeg_stu(){
 
     avformat_close_input(&ps);
 }
-
-ffmpeg_stu::~ffmpeg_stu() = default;

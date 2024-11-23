@@ -2,6 +2,9 @@
 
 int main(){
     ffmpeg_stu test;
+    std::string file_path = "/Users/zhanghao/code/cpp/av_dev_study/test/test_file/test.mp4";
+
+    test.my_av_dump_format(file_path);
 
     return 0;
 }
