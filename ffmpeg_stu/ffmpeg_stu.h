@@ -10,6 +10,8 @@ public:
 
     void my_av_dump_format(std::string file_path);
 
+    void list_av_codecs();
+
 };
 
 #endif // FFMPEG_STU_H

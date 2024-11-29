@@ -1,14 +1,14 @@
-﻿add_executable(opengl_stu_test
-    opengl_stu_test.cpp
-)
+﻿# add_executable(opengl_stu_test
+#     opengl_stu_test.cpp
+# )
 
-target_include_directories(opengl_stu_test PUBLIC
-    ${CMAKE_SOURCE_DIR}/opengl_stu
-)
+# target_include_directories(opengl_stu_test PUBLIC
+#     ${CMAKE_SOURCE_DIR}/opengl_stu
+# )
 
-target_link_libraries(opengl_stu_test
-    opengl_stu
-)
+# target_link_libraries(opengl_stu_test
+#     opengl_stu
+# )
 
 ################################################################################
 

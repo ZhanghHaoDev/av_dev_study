@@ -1,4 +1,4 @@
-add_library(ffmpeg_stu STATIC
+add_library(ffmpeg_stu OBJECT
     ffmpeg_stu.cpp
 )
 

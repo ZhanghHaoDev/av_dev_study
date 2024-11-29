@@ -1,4 +1,4 @@
-﻿add_library(sdl_stu STATIC
+﻿add_library(sdl_stu OBJECT
     sdl_stu.cpp
 )
 

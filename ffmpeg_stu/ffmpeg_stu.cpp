@@ -33,3 +33,25 @@ void ffmpeg_stu::my_av_dump_format(std::string file_path){
 
     avformat_close_input(&ps);
 }
+
+void ffmpeg_stu::list_av_codecs(){
+    const AVCodec* codec = nullptr; // 列举所有编码器
+    void* iter = nullptr;
+    printf("Encoders:\n");
+    while ((codec = av_codec_iterate(&iter))) {
+        if (av_codec_is_encoder(codec)) {
+            printf("Encoder: %s", codec->name);
+        }
+    }
+
+    std::cout << "\n";
+
+    iter = nullptr;             // 列举所有解码器
+    printf("Decoders:\n");
+    while ((codec = av_codec_iterate(&iter))) {
+        if (av_codec_is_decoder(codec)) {
+            printf("Decoder: %s", codec->name);
+        }
+    }
+    std::cout << "\n";
+}
