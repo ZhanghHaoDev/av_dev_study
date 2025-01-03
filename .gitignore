@@ -27,3 +27,4 @@ build/
 fc_base/
 !fc_base/**/
 ffmpeg_stu/fc_base
+.ccls-cache

@@ -4,15 +4,15 @@
 #include <fstream>
 
 #include "SDL.h"
-#include "SDL2/SDL_mixer.h"
+#include "SDL_mixer.h"
 #include <SDL_error.h>
 #include <SDL_events.h>
 #include <SDL_keyboard.h>
 #include <SDL_keycode.h>
 #include <SDL_render.h>
 #include <SDL_video.h>
-#include "SDL2/SDL_image.h"
-#include "SDL2/SDL_ttf.h"
+#include "SDL_image.h"
+#include "SDL_ttf.h"
 
 sdl_stu::sdl_stu(){SDL_Init(SDL_INIT_EVERYTHING);}
 

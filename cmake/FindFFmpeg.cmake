@@ -6,19 +6,19 @@
 # target_link_libraries(project_name PRIVATE FFmpeg::avcodec FFmpeg::avformat FFmpeg::avutil FFmpeg::swscale)
 
 include(FindPackageHandleStandardArgs)
-set(FFmpeg_FIND_COMPONENTS AVCODEC AVFORMAT AVUTIL SWSCALE)
+set(FFmpeg_FIND_COMPONENTS AVCODEC AVFORMAT AVUTIL SWSCALE SWRESAMPLE AVFILTER POSTPROC)
 
-set(FFMPEG_ROOT_DIR CACHE PATH "FFmpeg root directory")
+set(FFMPEG_USER_DIR CACHE PATH "FFmpeg USER directory")
 if(UNIX AND NOT APPLE)
 	set(FFMPEG_POSSIBLE_ROOT_DIRS
-		${FFMPEG_ROOT_DIR}
+		${FFMPEG_USER_DIR}
 		/usr/local
 		/usr
 		/opt
 	)
 elseif(APPLE)
 	set(FFMPEG_POSSIBLE_ROOT_DIRS
-		${FFMPEG_ROOT_DIR}
+		${FFMPEG_USER_DIR}
 		/opt/homebrew/opt/ffmpeg
 		/usr/local/opt/ffmpeg
 		/usr/local
@@ -26,7 +26,7 @@ elseif(APPLE)
 	)
 elseif(WIN32)
 	set(FFMPEG_POSSIBLE_ROOT_DIRS
-		${FFMPEG_ROOT_DIR}
+		${FFMPEG_USER_DIR}
 		C:/ffmpeg
 		"C:/Program Files/ffmpeg"
 		"C:/Program Files (x86)/ffmpeg"
@@ -81,14 +81,17 @@ if(AVCODEC_FOUND AND AVFORMAT_FOUND AND AVUTIL_FOUND AND SWSCALE_FOUND)
 endif()
 
 set(_FFmpeg_REQUIRED_VARS
-	AVCODEC_LIBRARY
-	AVFORMAT_LIBRARY
-	AVUTIL_LIBRARY
-	SWSCALE_LIBRARY
-	FFMPEG_INCLUDE_DIRS
+    AVCODEC_LIBRARY
+    AVFORMAT_LIBRARY
+    AVUTIL_LIBRARY
+    SWSCALE_LIBRARY
+    SWRESAMPLE_LIBRARY
+    AVFILTER_LIBRARY
+    POSTPROC_LIBRARY
+    FFMPEG_INCLUDE_DIRS
 )
 
 find_package_handle_standard_args(FFmpeg
 	REQUIRED_VARS ${_FFmpeg_REQUIRED_VARS}
-	FAIL_MESSAGE "FFmpeg libraries or headers not found. Please install FFmpeg or set FFMPEG_ROOT_DIR."
+	FAIL_MESSAGE "FFmpeg libraries or headers not found. Please install FFmpeg or set FFMPEG_USER_DIR."
 )

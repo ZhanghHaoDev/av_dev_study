@@ -4,4 +4,6 @@ add_library(ffmpeg_stu OBJECT
 
 find_package(FFmpeg REQUIRED)
 
-target_link_libraries(ffmpeg_stu PRIVATE FFmpeg::FFmpeg)
+target_link_libraries(ffmpeg_stu PRIVATE 
+    FFmpeg::FFmpeg
+)
